@@ -1,0 +1,20 @@
+.techItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 44px;
+  margin: 10px;
+  width: 180px;
+  max-width: 400px;
+  margin-bottom: 50px;
+}
+.tech-logo {
+  width: 100%;
+  margin-bottom: 24px;
+  height: 105px;
+}
+.tech-name {
+  line-height: 32px;
+  font-size: 24px;
+  color: #fff;
+}

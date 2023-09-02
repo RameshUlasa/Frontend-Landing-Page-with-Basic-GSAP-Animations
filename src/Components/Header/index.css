@@ -1,0 +1,24 @@
+.custom-navbar {
+  background-color: transparent !important;
+}
+.logo {
+  text-decoration: none;
+  padding: 4px 8px;
+  font-size: 18px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.nav-mar {
+  margin: 10px 6px;
+  font-size: 14px;
+  color: #ffffff !important;
+  padding: 0;
+  width: fit-content;
+}
+.nav-mar:hover {
+  border-bottom: solid 1px #f16522;
+}
+.active {
+  border-bottom: solid 1px #f16522;
+}
