@@ -19,14 +19,12 @@ This project is a frontend landing page template with basic GSAP animations. It 
 
 ## Installation
 
-## Installation
-
 To run this project locally, follow these steps:
 
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/RameshUlasa/Movies-App
+   git clone https://github.com/RameshUlasa/Frontend-Landing-Page-with-Basic-GSAP-Animations.git
    ```
 
 2. Navigate to the project directory:
