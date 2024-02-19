@@ -21,7 +21,7 @@ const ApproachList = (props) => {
     tl.fromTo(
       itemRef.current,
       { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+      { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }
     );
   }, []);
 
@@ -45,5 +45,4 @@ const ApproachList = (props) => {
     </li>
   );
 };
-
 export default ApproachList;
