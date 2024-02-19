@@ -1,4 +1,6 @@
 import { BsArrowRight } from "react-icons/bs";
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 
 import ServicesPage from "../ServicesPage";
 import ClientDetailsCard from "../ClientDetailsCard";
@@ -160,83 +162,102 @@ const approachList = [
   },
 ];
 
-const HomePage = () => (
-  <div className="home-container">
-    <Header />
-    <div className="welcome-container">
-      <h1 className="slogan">EMBRACE THE FUTURE</h1>
-      <p className="caption">Welcome to the Age of Action</p>
-    </div>
-    <ul className="service-card ">
-      <ServicesPage />
-    </ul>
-    <div className="info-container">
-      <div className="more-works-card">
-        <h2 className="info-head">Check out more works by Geeks Invention</h2>
-        <p className="info-text">
-          Our case studies describe design and development solutions implemented
-          at our Geeks Invention projects. The stories are a valuable resource
-          for those looking to develop their own mobile apps.
-        </p>
+const HomePage = () => {
+  useEffect(() => {
+    gsap.to(".slogan", {
+      duration: 3,
+      x: "-10%",
+
+      ease: "elastic",
+    });
+  }, []);
+  useEffect(() => {
+    gsap.to(".caption", {
+      duration: 3,
+      x: "10%",
+      ease: "elastic",
+    });
+  }, []);
+
+  return (
+    <div className="home-container">
+      <Header />
+      <div className="welcome-container">
+        <h1 className="slogan">EMBRACE THE FUTURE</h1>
+        <p className="caption">Welcome to the Age of Action</p>
+      </div>
+      <div className="service-card ">
+        <ServicesPage />
+      </div>
+      <div className="info-container">
+        <div className="more-works-card">
+          <h2 className="info-head">Check out more works by Geeks Invention</h2>
+          <p className="info-text">
+            Our case studies describe design and development solutions
+            implemented at our Geeks Invention projects. The stories are a
+            valuable resource for those looking to develop their own mobile
+            apps.
+          </p>
+          <a className="btn-orange" href="#">
+            <span>
+              See all case studies <BsArrowRight className="arrow" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <ul className="clients-list">
+        <div className="info-card">
+          <h3 className="info-head">Recent clients</h3>
+          <p className="info-text">
+            We worked with the Fortune 500 companies in the USA, Africa, UK,
+            Middle East <br />
+            World's 4th Strongest Banking Brand, Automobile & IoT industry
+          </p>
+        </div>
+        <div className="clients-container">
+          {clientsData.map((eachItem) => (
+            <ClientDetailsCard eachItem={eachItem} key={eachItem.id} />
+          ))}
+        </div>
+      </ul>
+      <div className="software-list">
+        <div className="info-card">
+          <h3 className="info-head">Software for modern platforms</h3>
+          <p className="info-text">
+            We develop applications for mobile, web, wearables, and TV.
+          </p>
+        </div>
+        <ul className="tech-container">
+          {techList.map((eachTech) => (
+            <TechList eachTech={eachTech} key={eachTech.id} />
+          ))}
+        </ul>
         <a className="btn-orange" href="#">
           <span>
-            See all case studies <BsArrowRight className="arrow" />
+            See our tech stack <BsArrowRight className="arrow" />
+          </span>
+        </a>
+      </div>
+      <div className="software-list">
+        <div className="info-card">
+          <h3 className="info-head">Software for modern platforms</h3>
+          <p className="info-text">
+            We develop applications for mobile, web, wearables, and TV.
+          </p>
+        </div>
+        <ul className="tech-container">
+          {approachList.map((eachTech) => (
+            <ApproachList eachTech={eachTech} key={eachTech.id} />
+          ))}
+        </ul>
+        <a className="btn-orange" href="#">
+          <span>
+            See our tech stack <BsArrowRight className="arrow" />
           </span>
         </a>
       </div>
     </div>
-    <ul className="clients-list">
-      <div className="info-card">
-        <h3 className="info-head">Recent clients</h3>
-        <p className="info-text">
-          We worked with the Fortune 500 companies in the USA, Africa, UK,
-          Middle East <br />
-          World's 4th Strongest Banking Brand, Automobile & IoT industry
-        </p>
-      </div>
-      <div className="clients-container">
-        {clientsData.map((eachItem) => (
-          <ClientDetailsCard eachItem={eachItem} key={eachItem.id} />
-        ))}
-      </div>
-    </ul>
-    <div className="software-list">
-      <div className="info-card">
-        <h3 className="info-head">Software for modern platforms</h3>
-        <p className="info-text">
-          We develop applications for mobile, web, wearables, and TV.
-        </p>
-      </div>
-      <ul className="tech-container">
-        {techList.map((eachTech) => (
-          <TechList eachTech={eachTech} key={eachTech.id} />
-        ))}
-      </ul>
-      <a className="btn-orange" href="#">
-        <span>
-          See our tech stack <BsArrowRight className="arrow" />
-        </span>
-      </a>
-    </div>
-    <div className="software-list">
-      <div className="info-card">
-        <h3 className="info-head">Software for modern platforms</h3>
-        <p className="info-text">
-          We develop applications for mobile, web, wearables, and TV.
-        </p>
-      </div>
-      <ul className="tech-container">
-        {approachList.map((eachTech) => (
-          <ApproachList eachTech={eachTech} key={eachTech.id} />
-        ))}
-      </ul>
-      <a className="btn-orange" href="#">
-        <span>
-          See our tech stack <BsArrowRight className="arrow" />
-        </span>
-      </a>
-    </div>
-  </div>
-);
+  );
+};
 
 export default HomePage;

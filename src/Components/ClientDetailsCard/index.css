@@ -5,10 +5,12 @@
   align-items: center;
   background-color: #2e3038;
   padding: 40px 40px;
+  cursor: pointer;
   margin: 12px;
   text-align: center;
   width: 90%;
   max-width: 350px;
+  border-radius: 10px;
 }
 .logo {
   max-width: 100%;
